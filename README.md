@@ -3,7 +3,7 @@
 
 ## Project Description
 
-This project involves scraping a list of food items from the 'xyz' website using Selenium. The scraper extracts relevant details such as the name, category, price, and availability of various food items and compiles them into a structured format for analysis and further use.
+This project involves scraping a list of food items from the 'https://www.freshmenu.com/' website using Selenium. The scraper extracts relevant details such as the name,  price and compiles them into a structured format for analysis and further use.
 
 ## Features
 
