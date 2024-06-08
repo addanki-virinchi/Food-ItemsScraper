@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jun  3 08:40:36 2024
-
-@author: 91630
-"""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -33,15 +27,18 @@ price = driver.find_elements(By.CSS_SELECTOR,"span.new.ng-binding")
 for p in price:
     price_of_the_item.append(p.text)
 print(price_of_the_item)
-
-#elements = driver.find_elements(By.CSS_SELECTOR, 'a[href*="/product/"]')
-
+elements = driver.find_elements(By.CSS_SELECTOR, 'a[href*="/product/"]')
+urls =[]
+for ele in elements:
+    url = ele.get_attribute('href')
+    urls.append(url)
+print(urls)
     
 driver.quit()
-
 data = {
     'Dish Name': name_of_the_item,
-    'Price': price_of_the_item
+    'Price': price_of_the_item,
+    'url_of_food_the_Item':urls
     
 }
 for key, value in data.items():
@@ -61,4 +58,3 @@ print(df)
 
 # Save the DataFrame to a CSV file
 df.to_csv('freshmenu_items.csv', index=False)
-
